@@ -1,0 +1,30 @@
+# This is a PUBLIC product/distribution repo — docs only.
+# Installers are published as GitHub Release assets, never committed.
+# This .gitignore is a safety net so binaries or secrets can't slip in.
+
+# Installers / binaries (distributed via Releases)
+*.exe
+*.msi
+*.zip
+*.7z
+*.dll
+*.pyd
+*.bin
+
+# Secrets / keys — must NEVER be in this repo
+*.key
+*.pem
+*.pfx
+*ed25519*
+*private*
+*secret*
+*apikey*
+*api_key*
+.env
+.env.*
+
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+*~

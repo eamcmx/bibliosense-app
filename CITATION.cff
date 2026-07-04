@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If bibliosense supported your research, please cite it as below and disclose the AI-assisted steps (provider/model and the validation Cohen's κ)."
+title: bibliosense
+abstract: >-
+  A private desktop application for bibliometric analysis, AI-assisted PRISMA
+  literature screening and core-corpus curation, multi-database search (PubMed,
+  Scopus), and narrated field-evolution videos. AI screening is human-in-the-loop:
+  a human re-screens a random sample and the AI-to-human agreement (Cohen's κ) is
+  reported.
+type: software
+version: "0.7.1"
+date-released: "2026-07-04"
+authors:
+  - family-names: "Merchán-Cruz"
+    given-names: "Emmanuel A."
+url: "https://github.com/eamcmx/bibliosense-app"
+repository-artifact: "https://github.com/eamcmx/bibliosense-app/releases"
+keywords:
+  - bibliometrics
+  - systematic literature review
+  - PRISMA
+  - AI-assisted screening
+  - human-in-the-loop
+  - research software
