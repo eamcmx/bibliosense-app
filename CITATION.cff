@@ -8,8 +8,8 @@ abstract: >-
   a human re-screens a random sample and the AI-to-human agreement (Cohen's κ) is
   reported.
 type: software
-version: "0.7.1"
-date-released: "2026-07-04"
+version: "0.7.4"
+date-released: "2026-09-10"
 authors:
   - family-names: "Merchán-Cruz"
     given-names: "Emmanuel A."

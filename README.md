@@ -12,7 +12,7 @@
 &nbsp;
 ![Platform](https://img.shields.io/badge/Windows-10%20%2F%2011-555?style=for-the-badge)
 &nbsp;
-![Version](https://img.shields.io/badge/version-0.7.1-16a34a?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.7.4-16a34a?style=for-the-badge)
 &nbsp;
 ![License](https://img.shields.io/badge/license-Proprietary%20%C2%B7%2030--day%20trial-orange?style=for-the-badge)
 
@@ -60,8 +60,8 @@ Pick **one** — all three are the same app:
 
 | Download | Best for | Notes |
 |---|---|---|
-| **`bibliosense_0.7.1_x64-setup.exe`** | Most users | Standard installer · Start‑menu shortcut |
-| **`bibliosense_0.7.1_x64_en-US.msi`** | IT‑managed machines | Enterprise/MSI deployment |
+| **`bibliosense_0.7.4_x64-setup.exe`** | Most users | Standard installer · Start‑menu shortcut |
+| **`bibliosense_0.7.4_x64_en-US.msi`** | IT‑managed machines | Enterprise/MSI deployment |
 
 > **First launch may show a Windows SmartScreen notice** because the app isn’t code‑signed yet (on the roadmap). Click **More info → Run anyway**.
 
@@ -107,7 +107,7 @@ See **[LICENSE](LICENSE)** for the full terms. In short: all rights reserved; th
 If bibliosense supported your study, please cite the software **and** disclose the AI‑assisted steps (your provider/model and the validation κ). GitHub's **“Cite this repository”** button (from [`CITATION.cff`](CITATION.cff)) gives this in APA/BibTeX too.
 
 **Software citation (APA):**
-Merchán‑Cruz, E. A. (2026). *bibliosense* (Version 0.7.1) [Computer software]. https://github.com/eamcmx/bibliosense-app
+Merchán‑Cruz, E. A. (2026). *bibliosense* (Version 0.7.4) [Computer software]. https://github.com/eamcmx/bibliosense-app
 
 **BibTeX:**
 ```bibtex
@@ -115,13 +115,13 @@ Merchán‑Cruz, E. A. (2026). *bibliosense* (Version 0.7.1) [Computer software]
   author  = {Merchán-Cruz, Emmanuel A.},
   title   = {bibliosense},
   year    = {2026},
-  version = {0.7.1},
+  version = {0.7.4},
   url     = {https://github.com/eamcmx/bibliosense-app}
 }
 ```
 
 **Suggested methods / acknowledgement note** (adapt the bracketed values):
-> The bibliographic search and title/abstract screening were performed with the aid of *bibliosense* v0.7.1 (Merchán‑Cruz, 2026), which uses a large‑language‑model classifier to triage records against author‑defined inclusion/exclusion criteria through a configurable provider API (here, **[provider — e.g. Mistral AI, model mistral‑small]**). AI suggestions were treated as provisional: a random sample of **N = [n] ([x]%)** was independently re‑screened with the AI’s verdicts hidden, giving an inter‑rater agreement of **Cohen’s κ = [value] ([interpretation])** between the AI and the human reviewer. Final inclusion decisions rested with the author(s); the full search strategy and screening counts are reported following PRISMA 2020.
+> The bibliographic search and title/abstract screening were performed with the aid of *bibliosense* v0.7.4 (Merchán‑Cruz, 2026), which uses a large‑language‑model classifier to triage records against author‑defined inclusion/exclusion criteria through a configurable provider API (here, **[provider — e.g. Mistral AI, model Ministral 8B]**). AI suggestions were treated as provisional: a random sample of **N = [n] ([x]%)** was independently re‑screened with the AI’s verdicts hidden, giving an inter‑rater agreement of **Cohen’s κ = [value] ([interpretation])** between the AI and the human reviewer. Final inclusion decisions rested with the author(s); the full search strategy and screening counts are reported following PRISMA 2020.
 
 Please state the AI **provider and model** and the validation **κ**, and follow your venue’s policy on AI‑assisted tools.
 

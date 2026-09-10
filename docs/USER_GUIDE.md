@@ -1,6 +1,6 @@
 # bibliosense — User Guide
 
-**Version 0.7.1 · Windows 10/11 (64‑bit)**
+**Version 0.7.4 · Windows 10/11 (64‑bit)**
 
 This guide takes you from a fresh install to your first complete analysis, your
 first PRISMA‑screened core corpus, and your first Chronicle video. Every section is
@@ -12,9 +12,9 @@ a short checklist of what to click and what to expect.
 
 Pick one (both are the same app):
 
-- **`bibliosense_0.7.1_x64-setup.exe`** — standard installer; adds a Start‑menu
+- **`bibliosense_0.7.4_x64-setup.exe`** — standard installer; adds a Start‑menu
   shortcut. Best for most users.
-- **`bibliosense_0.7.1_x64_en-US.msi`** — for IT‑managed machines.
+- **`bibliosense_0.7.4_x64_en-US.msi`** — for IT‑managed machines.
 
 > **First launch may show a Windows SmartScreen notice** (the app isn’t
 > code‑signed yet). Click **More info → Run anyway**.
@@ -44,8 +44,12 @@ key.
 
 1. Open **Settings** (the gear, top‑right) or the **AI Enhancement** panel.
 2. Choose a provider (OpenAI, Anthropic, or **Mistral** — Mistral has a capable
-   free tier), paste your API key, and **Test**. The model list is fetched live
-   from each vendor, so new models show up as soon as they ship.
+   free tier), paste your API key, and **Validate**. Validate checks two things:
+   that the key is accepted, and that the selected model answers on your
+   account (if the key is fine but the model is not included in your plan, it
+   says so). The model list is fetched live from each vendor, with the
+   recommended picks first (cheap / mid-tier / frontier) and the default marked,
+   so new models show up as soon as they ship.
 3. Toggle AI on. You can switch provider/model anytime from the header.
 
 Without a key, all the core analysis still works — AI just adds the written

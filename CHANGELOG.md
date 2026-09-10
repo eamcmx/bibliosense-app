@@ -2,6 +2,63 @@
 
 All notable user-facing changes. Dates are release dates.
 
+## 0.7.4 — 2026-09
+
+AI providers and models: current model lists, requests that work with today's
+vendor APIs, and error messages that tell you what to do next. This release
+also carries the 0.7.2 and 0.7.3 changes, which were not published separately.
+
+### New
+- **Current model choices for every provider.** The model list is fetched from
+  the vendor when a key is saved, with the recommended picks first (cheap /
+  mid-tier / frontier badges), the default marked, and a Custom entry for
+  anything newer. The defaults are now Ministral 8B (Mistral), GPT-5.4 nano
+  (OpenAI), Claude Haiku 4.5 (Anthropic API) and Claude Sonnet 5 (Claude Code
+  subscription).
+- **Validate checks two things:** that the key is accepted, and that the
+  selected model actually answers on your account. If the key is fine but the
+  model is not included in your plan, the panel says exactly that.
+- **Change the model on the spot.** When a model is not available to your
+  account, is unknown to the provider, or your installed Claude Code is too old
+  for it, the message names the problem and opens the model picker.
+
+### Fixed / improved
+- **OpenAI and the newer Anthropic models answer again.** Requests are now
+  shaped the way each vendor requires; before this release every OpenAI call
+  and the newer Claude models (Sonnet 5, Opus 5, Fable) failed.
+- **Mistral free tier.** The models the free plan does not include (Mistral
+  Small / Medium / Large) are no longer the default and are no longer retried
+  with a "try again in a minute" message; the app tells you the plan has no
+  allowance for that model and offers another.
+- **The model you pick is saved immediately** and shown in the header pill,
+  including for the Claude Code subscription; switching provider no longer
+  resets your choice.
+- The Claude subscription card and the header token counter display correctly.
+- A model that declines to answer is reported as such, with the suggestion to
+  switch model, instead of a generic error.
+
+## 0.7.3 — 2026-08 (not published separately)
+
+Chronicle videos, after a frame-by-frame review of a real video.
+
+### Fixed / improved
+- **Countries are countries.** Cities, e-mail addresses and stray affiliation
+  text no longer appear in the country race.
+- **Continuous narration.** One script is written for the whole video, so the
+  scenes stop restating the same names and years; the script is saved next to
+  the audio file.
+- Thematic-map quadrants use one consistent legend and marker set; periods with
+  no emerging topics no longer render empty; duplicate drift labels are gone;
+  the keyword network is laid out readably.
+
+## 0.7.2 — 2026-07 (not published separately)
+
+### Changed
+- **Licenses are tied to the computer they are issued for.** Your Machine ID is
+  shown in About and on the trial-expired screen, with a copy button, so you can
+  send it when requesting a key. Keys issued without a machine binding are no
+  longer accepted.
+
 ## 0.7.1 — 2026-07
 
 Fixes uncovered while testing 0.7.0 on real, large corpora.
