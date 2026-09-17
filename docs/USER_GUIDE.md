@@ -1,6 +1,6 @@
 # bibliosense — User Guide
 
-**Version 0.7.4 · Windows 10/11 (64‑bit)**
+**Version 0.7.5 · Windows 10/11 (64‑bit)**
 
 This guide takes you from a fresh install to your first complete analysis, your
 first PRISMA‑screened core corpus, and your first Chronicle video. Every section is
@@ -12,15 +12,20 @@ a short checklist of what to click and what to expect.
 
 Pick one (both are the same app):
 
-- **`bibliosense_0.7.4_x64-setup.exe`** — standard installer; adds a Start‑menu
+- **`bibliosense_0.7.5_x64-setup.exe`** — standard installer; adds a Start‑menu
   shortcut. Best for most users.
-- **`bibliosense_0.7.4_x64_en-US.msi`** — for IT‑managed machines.
+- **`bibliosense_0.7.5_x64_en-US.msi`** — for IT‑managed machines.
 
 > **First launch may show a Windows SmartScreen notice** (the app isn’t
 > code‑signed yet). Click **More info → Run anyway**.
 
 Your saved analyses live in your user profile and your keys in Windows
 Credential Manager — nothing is written elsewhere.
+
+> **Upgrading from 0.7.4 or earlier?** 0.7.5 corrects statistics and AI text in
+> the report. Analyses saved by earlier versions open with a **Legacy** badge;
+> re-run them to get the corrected numbers, and regenerate any report you
+> intend to use in a manuscript. The release notes list the affected sections.
 
 ---
 
@@ -83,17 +88,26 @@ narrative and assistance on top.
 1. In **Bibliometric** mode, drop in your records (a Scopus / Web of Science /
    Lens / OpenAlex export, or the corpus Research Pilot built).
 2. Review the **Corpus ready** summary (record count, year range, whether cited
-   references are included), adjust analysis settings if needed, and click
+   references are included), adjust analysis settings if needed (the options
+   include *Research question this corpus was searched for*, used by the AI
+   relevance screen; a Research Pilot corpus already carries it), and click
    **Run analysis**. A running analysis can be **cancelled** at any point.
 3. Explore the interactive dashboards: keyword co‑occurrence, author /
    institution / country collaboration, citation impact, thematic map, research
    fronts, source productivity, and more.
-4. Open the **Report** tab for the written narrative (with AI on, every claim is
-   grounded in your actual records).
+4. Open the **Report** tab for the written narrative. Its first line says when
+   the analysis ran and with which engine. Every number comes from the analysis
+   itself; a statistic that does not hold on your corpus prints a caveat or
+   *(not computable: reason)*, and the methodology section describes what
+   actually ran. With AI on, every AI paragraph is checked against the tables it
+   was given: a paragraph that cites a value absent from them is regenerated
+   once and otherwise withheld with a visible note, and the report ends with an
+   *AI generation log* (model, date and prompt version for each paragraph).
 
 ### AI relevance triage (optional, two‑pass analysis)
 Turn on **relevance screening** and, before any dashboard is built, the AI
-checks every record against your research question and excludes what it judges
+checks every record against the research question you stated (never against a
+title the AI wrote itself; with no question the screen is skipped) and excludes what it judges
 off‑topic — so the networks, trends, and counts you explore are computed on the
 cleaned corpus, not diluted by papers that slipped through the search. Every
 verdict (kept and excluded) stays visible: the **Overview tab’s “AI relevance
@@ -134,6 +148,13 @@ and write‑up stay yours.
    RIS that attaches any PDFs you downloaded — import into Zotero and
    everything lands with abstracts, tags, and keys intact.
 
+   The PRISMA counts report records the screening never reached as such, not as
+   screened and excluded. The curated export is exactly the PRISMA included set,
+   with not-retrieved records listed in a separate file. Citation keys are
+   assigned once and never change between exports. The year clause recorded for
+   each database query is checked against the records and flagged when they
+   disagree.
+
 ---
 
 ## 6. Chronicle video — the story of your field
@@ -154,6 +175,9 @@ full report.
 
 Every analysis you run is saved to the **Library** (the books icon, top‑right) —
 reopen, compare, rename, or delete past analyses and reviews at any time.
+Analyses saved by a version before 0.7.5 show a **Legacy** badge: they open as
+they were saved and keep their original report. Re-run them for the 0.7.5
+numbers.
 
 ---
 

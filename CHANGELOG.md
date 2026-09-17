@@ -2,6 +2,52 @@
 
 All notable user-facing changes. Dates are release dates.
 
+## 0.7.5 — 2026-09
+
+Report integrity. An external review found invented facts in AI paragraphs and
+wrong statistics in the tables of a 0.7.4 report; every point was confirmed on
+three real corpora. 0.7.5 fixes the causes. **Reports generated with earlier
+versions should be regenerated before they are used in a manuscript**; the
+release notes list the affected sections.
+
+### Fixed
+- **Numbers.** Countries, authors and institutions are counted by records, not
+  by affiliation strings or network links; venue and reference totals cover the
+  whole corpus, not the listed slice; growth is measured over complete years
+  from a real base year; the m-index is anchored on the first year with real
+  output; only keyword communities of three or more keywords count as themes.
+- **Statistics that could not hold.** Emerging-theme scores that hit the
+  mathematical ceiling are no longer presented as bursts; Bradford and Lotka are
+  tested before the report says a law holds; every adaptive threshold prints
+  what was applied. Statistics that do not hold on a corpus print a caveat or
+  "not computable" instead of a number.
+- **AI paragraphs.** Every AI call is built from the analysis itself and its
+  answer is checked against the data it was given: a paragraph that cites a
+  value not in the analysis is regenerated once and otherwise withheld, with a
+  visible note and an "AI generation log" at the end of the report. Each AI
+  paragraph shows its model, date and prompt version.
+- **Relevance screening** now judges records against the research question you
+  state (or the Research Pilot question), never against an AI-written title.
+- **Saved analyses** open with the date and engine version they were computed
+  with; older analyses show a Legacy badge and keep their original report.
+- **Literature review.** Records the screening never reached are reported as
+  such (not as screened and excluded); the curated export is exactly the PRISMA
+  included set, with not-retrieved records listed beside it; citation keys are
+  assigned once and never change between exports; the year clause recorded for
+  each database query is checked against the records and flagged when they
+  disagree.
+
+### New
+- Entity canonicalisation before counting: keyword variants and acronyms,
+  journal abbreviations across databases, country names, multi-campus
+  institutions, author identifiers, and one key per cited work across PubMed,
+  Scopus and CSV references (resolved when sources are consolidated).
+- A "Research question this corpus was searched for" field in the analysis
+  options.
+- A canonicalisation log and a generated methodology section in every report;
+  document type, volume, issue, pages and ISSN carried through consolidation
+  and into the curated export.
+
 ## 0.7.4 — 2026-09
 
 AI providers and models: current model lists, requests that work with today's
