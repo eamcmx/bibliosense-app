@@ -5,11 +5,11 @@ abstract: >-
   A private desktop application for bibliometric analysis, AI-assisted PRISMA
   literature screening and core-corpus curation, multi-database search (PubMed,
   Scopus), and narrated field-evolution videos. AI screening is human-in-the-loop:
-  a human re-screens a random sample and the AI-to-human agreement (Cohen's κ) is
+  a human re-screens a stratified random sample and the AI-to-human agreement (Cohen's κ) is
   reported.
 type: software
-version: "0.7.4"
-date-released: "2026-09-10"
+version: "0.7.8"
+date-released: "2026-10-06"
 authors:
   - family-names: "Merchán-Cruz"
     given-names: "Emmanuel A."

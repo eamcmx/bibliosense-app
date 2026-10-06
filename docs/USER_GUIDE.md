@@ -1,6 +1,6 @@
 # bibliosense — User Guide
 
-**Version 0.7.5 · Windows 10/11 (64‑bit)**
+**Version 0.7.8 · Windows 10/11 (64‑bit)**
 
 This guide takes you from a fresh install to your first complete analysis, your
 first PRISMA‑screened core corpus, and your first Chronicle video. Every section is
@@ -12,9 +12,9 @@ a short checklist of what to click and what to expect.
 
 Pick one (both are the same app):
 
-- **`bibliosense_0.7.5_x64-setup.exe`** — standard installer; adds a Start‑menu
+- **`bibliosense_0.7.8_x64-setup.exe`**: standard installer; adds a Start‑menu
   shortcut. Best for most users.
-- **`bibliosense_0.7.5_x64_en-US.msi`** — for IT‑managed machines.
+- **`bibliosense_0.7.8_x64_en-US.msi`**: for IT‑managed machines.
 
 > **First launch may show a Windows SmartScreen notice** (the app isn’t
 > code‑signed yet). Click **More info → Run anyway**.
@@ -26,6 +26,12 @@ Credential Manager — nothing is written elsewhere.
 > the report. Analyses saved by earlier versions open with a **Legacy** badge;
 > re-run them to get the corrected numbers, and regenerate any report you
 > intend to use in a manuscript. The release notes list the affected sections.
+>
+> **Upgrading from 0.7.5?** Open the Report tab of a saved analysis to see its
+> cited works as full references. Its numbers do not change until it is re-run:
+> re-run it for the corrected growth and trend figures, emerging-theme
+> significance, country shares, document types, institutions and keyword
+> clusters, and regenerate any report you intend to use in a manuscript.
 
 ---
 
@@ -78,7 +84,9 @@ narrative and assistance on top.
    happy. Other databases give you a ready‑to‑paste query for your institutional
    browser, then you upload the export.
 4. Click **Consolidate** — every database’s results are merged and de‑duplicated
-   into one corpus, with every search recorded for your PRISMA appendix.
+   into one corpus, with every search recorded for your PRISMA appendix. Use
+   **Save corpus to…** to keep a copy of the corpus file in a folder you choose
+   (it is refreshed whenever you re-consolidate); **Show in folder** opens it.
 5. Continue straight into **Bibliometric analysis** or a **Literature Review**.
 
 ---
@@ -103,6 +111,26 @@ narrative and assistance on top.
    was given: a paragraph that cites a value absent from them is regenerated
    once and otherwise withheld with a visible note, and the report ends with an
    *AI generation log* (model, date and prompt version for each paragraph).
+
+### Cited works in full
+The works your corpus cites most are printed as full references wherever the
+report and the **Seminal refs** tab list them: title, authors, year,
+journal or conference with volume and pages, DOI, the number of your records
+that cite the work, and its abstract. Reference lists carry no author lists
+and no abstracts, so the app looks those up (Scopus when you have a key, then
+OpenAlex, arXiv, Crossref and Semantic Scholar). Each entry says what the
+lookup supplied and on which date; an entry without an abstract says why.
+
+- A lookup that got no answer is asked again when the report is rebuilt: press
+  **Refresh figures** in the Report tab, or reopen the report after restarting the
+  app or after saving an OpenAlex key.
+- **Optional: your own OpenAlex key.** Without a key, OpenAlex gives everyone on
+  the same network one small daily allowance, and on a campus it is often spent.
+  A key is free at openalex.org: paste it under **Settings gear → Search‑database
+  API keys → OpenAlex API key**, press **Test**, then **Save**.
+- A corpus fetched with a version earlier than 0.7.5 (September 2026) may hold
+  only the database's number for a cited work. It is shown as such ("title not saved with this corpus"); running
+  the search again records the titles.
 
 ### AI relevance triage (optional, two‑pass analysis)
 Turn on **relevance screening** and, before any dashboard is built, the AI
@@ -139,7 +167,9 @@ and write‑up stay yours.
    title/abstract screening, and you make the final call on each record.
 4. **Retrieval** — fetch full texts automatically: open‑access sources, plus
    direct publisher download (ScienceDirect) for Elsevier papers when your
-   network is entitled.
+   network is entitled. Then read each report and record
+   your decision, **Eligible** or **Exclude** (naming the criterion it fails): a
+   study counts as included only when you mark it eligible.
 5. **Themes** — get suggested themes, organise included studies, and use
    **Pre‑qualify with AI** to flag studies that no longer fit a theme.
 6. **Export** — a publishable **PRISMA flow diagram** (SVG + PDF + DOCX), a
@@ -176,7 +206,7 @@ full report.
 Every analysis you run is saved to the **Library** (the books icon, top‑right) —
 reopen, compare, rename, or delete past analyses and reviews at any time.
 Analyses saved by a version before 0.7.5 show a **Legacy** badge: they open as
-they were saved and keep their original report. Re-run them for the 0.7.5
+they were saved and keep their original report. Re-run them for the corrected
 numbers.
 
 ---
@@ -201,10 +231,22 @@ explain a figure. It answers from your loaded corpus.
 
 ## 10. Privacy
 
-- Your **library, analyses, and data stay on your machine.**
+- Your **library, analyses and records are stored on your machine.**
 - **AI features and online full‑text retrieval** reach the internet **only when
-  you enable them**, using credentials you supply.
+  you enable them**, using credentials you supply; live database searches run when
+  you start them.
 - API keys are stored in **Windows Credential Manager**, never in plain text.
+- **Cited works (on by default).** To print the works your corpus cites most as full
+  references, the app sends the DOI, the Scopus or arXiv number, or the title (with
+  the first author's surname) of up to 45 of them to OpenAlex, arXiv, Crossref,
+  Semantic Scholar and, with your key, Scopus. This happens when an analysis is run
+  and when its report is opened or refreshed, whether or not AI is on. Nothing about
+  your own records, your question or your files is sent. The contact e-mail you set
+  for open-access retrieval, if any, goes to OpenAlex and Crossref, which ask for
+  one; an OpenAlex key goes to OpenAlex only, a Scopus key and institution token to
+  Elsevier only. To switch the lookup off, set the Windows environment variable
+  `BIBLIOSENSE_REFERENCE_LOOKUP` to `off` and restart the app; cited works then
+  show what your own data holds.
 
 ---
 
@@ -215,6 +257,7 @@ explain a figure. It answers from your loaded corpus.
 | **SmartScreen blocks first launch** | *More info → Run anyway* (the app isn’t code‑signed yet). |
 | **A database lane won’t run live** | PubMed needs no key; **Scopus needs your Scopus API key** (Settings gear). Some keys only return full records on a subscribing campus network — switch that lane to browser‑assisted instead. |
 | **AI features greyed out** | Add and **Test** a provider key, then toggle AI on. |
+| **A cited work shows "Abstract not retrieved: a lookup service did not answer..."** | The catalogue was busy or its shared daily allowance was spent. Press **Refresh figures** in the Report tab later, or add a free OpenAlex key (Settings gear) and open the report again. |
 | **Large corpus feels slow** | 8 GB RAM is recommended for >1000 records; analysis is heaviest on first run. With relevance screening on, a several‑hundred‑record corpus takes a few minutes for the triage pass alone — the progress count keeps moving throughout. |
 
 ---

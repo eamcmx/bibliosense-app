@@ -12,7 +12,7 @@
 &nbsp;
 ![Platform](https://img.shields.io/badge/Windows-10%20%2F%2011-555?style=for-the-badge)
 &nbsp;
-![Version](https://img.shields.io/badge/version-0.7.5-16a34a?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-0.7.8-16a34a?style=for-the-badge)
 &nbsp;
 ![License](https://img.shields.io/badge/license-Proprietary%20%C2%B7%2030--day%20trial-orange?style=for-the-badge)
 
@@ -38,7 +38,7 @@ bibliosense is a single Windows application that does the work research teams no
 
 > ⏱️ **Bibliometric analysis in a couple of hours, not weeks — and a PRISMA‑compliant core corpus in weeks, not months.**
 
-Everything stays **on your machine**. Your library, your analyses, and your data never leave your computer unless you explicitly export them.
+Your library, your analyses and your records are stored **on your machine**, and the analysis is computed there. One lookup is on by default: to print the works your corpus cites most as full references, the app sends their DOI or title to public scholarly catalogues. Nothing about your own records is sent, and the lookup can be switched off (see Privacy in the user guide for the services and what each receives). AI features and live database searches use the internet only when you run them.
 
 ---
 
@@ -48,7 +48,7 @@ Everything stays **on your machine**. Your library, your analyses, and your data
 - **Defensible by default.** Every search, every count, every screening decision is recorded for a reproducible PRISMA appendix. The bibliometric narrative report grounds each statement in the actual records you provided — no invented numbers.
 - **Human agency is the gate, not an afterthought.** AI accelerates the screening — it never gets the final say. You corroborate a sample of its decisions, and bibliosense scores the **AI‑to‑human agreement (Cohen’s κ)** and writes it straight into your PRISMA report. It’s a human‑in‑the‑loop checkpoint that keeps *you* in command of the evidence base — and makes your screening auditable and the corpus genuinely defensible.
 - **Your field becomes a film.** No competing tool turns a literature corpus into a narrated documentary of how the field changed over time. It’s the difference between a report nobody opens and a short story a committee remembers.
-- **Private by default, AI when you want it.** The core analysis runs offline. AI features are optional and use your own provider key — your corpus is never sent anywhere you didn’t choose.
+- **Private by default, AI when you want it.** The analysis is computed on your machine and completes without a connection. AI features are optional and use your own provider key, so your records go only to the provider you chose. The one automatic lookup, for the works your corpus cites, sends none of your records and can be switched off.
 
 ---
 
@@ -56,12 +56,12 @@ Everything stays **on your machine**. Your library, your analyses, and your data
 
 ➡️ **[Download the latest release](https://github.com/eamcmx/bibliosense-app/releases/latest)**
 
-Pick **one** — all three are the same app:
+Pick **one**; both are the same app:
 
 | Download | Best for | Notes |
 |---|---|---|
-| **`bibliosense_0.7.5_x64-setup.exe`** | Most users | Standard installer · Start‑menu shortcut |
-| **`bibliosense_0.7.5_x64_en-US.msi`** | IT‑managed machines | Enterprise/MSI deployment |
+| **`bibliosense_0.7.8_x64-setup.exe`** | Most users | Standard installer · Start‑menu shortcut |
+| **`bibliosense_0.7.8_x64_en-US.msi`** | IT‑managed machines | Enterprise/MSI deployment |
 
 > **First launch may show a Windows SmartScreen notice** because the app isn’t code‑signed yet (on the roadmap). Click **More info → Run anyway**.
 
@@ -72,7 +72,7 @@ Pick **one** — all three are the same app:
 | **OS** | Windows 10 / 11 (64‑bit) |
 | **Disk** | ~250 MB + space for your data |
 | **RAM** | 4 GB minimum · 8 GB recommended for large corpora |
-| **Internet** | Only for AI features and online full‑text retrieval — the core analysis is offline |
+| **Internet** | Needed for AI features, live database searches, online full‑text retrieval and the lookup of cited works. The analysis itself runs without a connection |
 | **AI provider key** *(optional)* | OpenAI, Anthropic, or Mistral (Mistral has a capable free tier) |
 
 You do **not** need any developer tools installed.
@@ -107,7 +107,7 @@ See **[LICENSE](LICENSE)** for the full terms. In short: all rights reserved; th
 If bibliosense supported your study, please cite the software **and** disclose the AI‑assisted steps (your provider/model and the validation κ). GitHub's **“Cite this repository”** button (from [`CITATION.cff`](CITATION.cff)) gives this in APA/BibTeX too.
 
 **Software citation (APA):**
-Merchán‑Cruz, E. A. (2026). *bibliosense* (Version 0.7.5) [Computer software]. https://github.com/eamcmx/bibliosense-app
+Merchán‑Cruz, E. A. (2026). *bibliosense* (Version 0.7.8) [Computer software]. https://github.com/eamcmx/bibliosense-app
 
 **BibTeX:**
 ```bibtex
@@ -115,13 +115,13 @@ Merchán‑Cruz, E. A. (2026). *bibliosense* (Version 0.7.5) [Computer software]
   author  = {Merchán-Cruz, Emmanuel A.},
   title   = {bibliosense},
   year    = {2026},
-  version = {0.7.5},
+  version = {0.7.8},
   url     = {https://github.com/eamcmx/bibliosense-app}
 }
 ```
 
 **Suggested methods / acknowledgement note** (adapt the bracketed values):
-> The bibliographic search and title/abstract screening were performed with the aid of *bibliosense* v0.7.5 (Merchán‑Cruz, 2026), which uses a large‑language‑model classifier to triage records against author‑defined inclusion/exclusion criteria through a configurable provider API (here, **[provider — e.g. Mistral AI, model Ministral 8B]**). AI suggestions were treated as provisional: a random sample of **N = [n] ([x]%)** was independently re‑screened with the AI’s verdicts hidden, giving an inter‑rater agreement of **Cohen’s κ = [value] ([interpretation])** between the AI and the human reviewer. Final inclusion decisions rested with the author(s); the full search strategy and screening counts are reported following PRISMA 2020.
+> The bibliographic search and title/abstract screening were performed with the aid of *bibliosense* v0.7.8 (Merchán‑Cruz, 2026), which uses a large‑language‑model classifier to triage records against author‑defined inclusion/exclusion criteria through a configurable provider API (here, **[provider, for example Mistral AI, model Ministral 8B]**). AI suggestions were treated as provisional: a stratified random sample of **N = [n] ([x]%)**, half of it drawn from the records the AI excluded, was independently re‑screened with the AI’s verdicts hidden, giving an inter‑rater agreement of **Cohen’s κ = [value] ([interpretation])** between the AI and the human reviewer. Final inclusion decisions rested with the author(s); the full search strategy and screening counts are reported following PRISMA 2020.
 
 Please state the AI **provider and model** and the validation **κ**, and follow your venue’s policy on AI‑assisted tools.
 
