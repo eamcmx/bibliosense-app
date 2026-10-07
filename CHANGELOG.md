@@ -17,8 +17,9 @@ them.
   explore are drawn by the app itself. It is now written only when you switch on *Also
   write a standalone dashboard.html beside the report* in the analysis settings (Outputs).
   The switch applies to the current session and is off again when the app starts. When
-  you do ask for the file, it now carries the AI text and the cited works' details that
-  the report beside it carries (since 0.7.6 it was written too early to hold them).
+  you do ask for the file, it is written from the finished analysis, so its keyword
+  network shows the AI names of the keyword clusters again (since 0.7.6 the file was
+  written too early to have them).
 
 ### Fixed
 - **A DOI link in the Report tab opens in your browser.** It used to load the page into
