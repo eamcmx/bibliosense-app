@@ -2,6 +2,58 @@
 
 All notable user-facing changes. Dates are release dates.
 
+## 0.7.9 (2026-10)
+
+A small release. One file is no longer written unless you ask for it, two things that
+could go wrong when you click a link or open a file that came with someone else's review
+are closed, and cited works found through Crossref are printed as their publishers print
+them.
+
+### Changed
+- **No standalone dashboard file unless you ask for it.** Every analysis wrote a
+  `dashboard.html` (5 to 9 MB) into a new folder next to the corpus file, beside the Word
+  report (for a Research Pilot search, in the search's own folder, which **Show in folder**
+  on the consolidated corpus opens). Nothing in the app uses that file: the dashboards you
+  explore are drawn by the app itself. It is now written only when you switch on *Also
+  write a standalone dashboard.html beside the report* in the analysis settings (Outputs).
+  The switch applies to the current session and is off again when the app starts. When
+  you do ask for the file, it now carries the AI text and the cited works' details that
+  the report beside it carries (since 0.7.6 it was written too early to hold them).
+
+### Fixed
+- **A DOI link in the Report tab opens in your browser.** It used to load the page into
+  the app's own window, and the app was gone until it was restarted.
+- **"Open file" opens documents only, and an imported review cannot point it elsewhere.**
+  A review bundle that someone sends you names, for each record, where its full text is.
+  That was taken as given, so a bundle made for the purpose could have made *Open file*
+  start a program. An imported review now keeps the documents the bundle itself carries
+  and drops every other file path, and *Open file* refuses anything that is not a
+  document.
+- **The standalone dashboard shows your records as text.** That file placed titles,
+  venues, keywords, names and AI text into its page as markup. A keyword that arrived
+  with a broken piece of markup (a real case from an IEEE export: `<italic xmlns:ali="`)
+  hid the keywords after it, and a record written for the purpose could run script when
+  the file was opened in a browser. The file now writes everything from your corpus as
+  text, and its links go to doi.org only. Keywords that carry the markup of their source,
+  such as `co<sub>2</sub>`, are shown as written, as the app shows them. A
+  `dashboard.html` dated before you installed 0.7.9 can be deleted. Do not open one that
+  was made from records someone else gave you, or one that someone else sent you; to share
+  a dashboard, run the analysis again in 0.7.9 with the switch on.
+- **Cited works found through Crossref read as published.** Abstracts and journal names
+  came back with coded characters and were printed that way
+  (`IEEE Communications Surveys &amp; Tutorials`); they now read as the publisher prints
+  them, and a short title that held such a character is recognised as the cited work. An
+  analysis made with 0.7.8 keeps the entries it saved; run it again to have them corrected.
+- **A paper is no longer printed with a preprint's title as its journal.** When a
+  preprint cited by its arXiv number shared a reference code with a different paper, the
+  preprint's title and arXiv number were printed as that paper's venue, and the preprint's
+  DOI and database number were mixed into its entry.
+- **Network labels with braces are drawn as written.** A keyword such as
+  `high-t_{c} superconductor` was changed by the chart in the network view and in the
+  figure exported from it.
+- **The Default preset of the analysis settings** resets the analysis parameters only; it
+  no longer changes the output switches or clears the research question.
+
 ## 0.7.8 (2026-10)
 
 0.7.6 and 0.7.7 were not published separately. This release carries their fixes, listed

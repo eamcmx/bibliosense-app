@@ -1,6 +1,6 @@
 # bibliosense — User Guide
 
-**Version 0.7.8 · Windows 10/11 (64‑bit)**
+**Version 0.7.9 · Windows 10/11 (64‑bit)**
 
 This guide takes you from a fresh install to your first complete analysis, your
 first PRISMA‑screened core corpus, and your first Chronicle video. Every section is
@@ -12,9 +12,9 @@ a short checklist of what to click and what to expect.
 
 Pick one (both are the same app):
 
-- **`bibliosense_0.7.8_x64-setup.exe`**: standard installer; adds a Start‑menu
+- **`bibliosense_0.7.9_x64-setup.exe`**: standard installer; adds a Start‑menu
   shortcut. Best for most users.
-- **`bibliosense_0.7.8_x64_en-US.msi`**: for IT‑managed machines.
+- **`bibliosense_0.7.9_x64_en-US.msi`**: for IT‑managed machines.
 
 > **First launch may show a Windows SmartScreen notice** (the app isn’t
 > code‑signed yet). Click **More info → Run anyway**.
@@ -147,6 +147,9 @@ of records) takes a few minutes, with the progress count moving throughout.
 ### Export
 From the report/output area you can save:
 - **Word (.docx)** and **Markdown** reports,
+- a standalone **dashboard page** (`dashboard.html`, beside the Word report) when you
+  switch it on in the analysis settings (Outputs) before you run the analysis; the
+  switch is off again when the app starts,
 - figures as images,
 - and (see §6) a **Chronicle video**.
 
